@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tentang Kami - Fit & Flare Studio</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ==========================================================================
+       1. CUSTOM BASE STYLES
+       ========================================================================== */
+    body {
+      background-color: #fcfbfa;
+      color: #2b2b2b;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, h5, .navbar-brand, .serif-text {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+
+    /* ==========================================================================
+       2. NAVBAR STYLES
+       ========================================================================== */
+    .navbar {
+      padding: 15px 0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      background-color: #ffffff !important;
+    }
+
+    .navbar .navbar-brand, .navbar .nav-link, .navbar .dropdown-toggle {
+      color: #2c2520 !important;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 14px;
+    }
+
+    /* ==========================================================================
+       3. ABOUT HERO HEADER (SERAGAM OVERLAY)
+       ========================================================================== */
+    .about-hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45));
+      background-size: cover;
+      background-position: center;
+      padding: 100px 0;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    .about-hero h1 {
+      font-size: 48px;
+      letter-spacing: 2px;
+    }
+
+    /* ==========================================================================
+       4. CONTENT CARDS & TYPOGRAPHY UPDATE (SANGAT MUDAH DIBACA)
+       ========================================================================== */
+    .tagline-box {
+      border-left: 4px solid #2c2520;
+      padding-left: 24px;
+    }
+
+    /* Font utama diatur tegak, berbobot 500 (Medium), dan line-height renggang */
+    .readable-quote {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 1.65;
+      color: #2c2520;
+    }
+
+    .feature-icon-box {
+      width: 50px;
+      height: 50px;
+      background-color: #f4f0ec;
+      color: #2c2520;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .vismis-card {
+      background: #ffffff;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+      transition: transform 0.3s ease;
+    }
+
+    .vismis-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .quote-box {
+      background-color: #f5f2ef;
+      border-radius: 16px;
+      position: relative;
+    }
+
+    .quote-icon {
+      font-size: 54px;
+      color: #d1c7bd;
+      position: absolute;
+      top: 15px;
+      left: 25px;
+      opacity: 0.3;
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar" class="navbar navbar-expand-lg border-bottom sticky-top bg-white">
+    <div class="container">
+            <!-- NAVBAR BRAND YANG SERAGAM DI SEMUA HALAMAN -->
+        <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html" style="font-family: 'Playfair Display', Georgia, serif; font-size: 20px; letter-spacing: 1.5px; padding: 0;">
+        <!-- Mengunci ukuran tinggi logo maksimal 32px agar konsisten kecil & rapi -->
+        <img src="assets/images/logo.png" alt="Logo Fit & Flare" style="max-height: 32px; width: auto; object-fit: contain; margin: 0;">
+        <span>FIT & FLARE STUDIO</span>
+        </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav gap-3">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="katalog.html">Katalog</a></li>
+          <li class="nav-item"><a class="nav-link" href="cara-sewa.html">Cara Sewa</a></li>
+          <li class="nav-item"><a class="nav-link active fw-bold" href="tentang-kami.html">Tentang Kami</a></li>
+          <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="about-hero">
+    <div class="container">
+      <h1 class="fw-bold m-0">Tentang Kami</h1>
+    <p class="text-uppercase small mt-3 opacity-75 mx-auto" style="letter-spacing: 2px; max-width: 600px; line-height: 1.8;">
+    Fit and Flare Studio adalah penyedia jasa sewa gaun dan kebaya di Yogyakarta yang siap menemani momen spesialmu.
+    </p>
+    </div>
+  </header>
+
+ <!-- TAGLINE & PENDAHULUAN -->
+<section class="container my-5 py-4">
+  <div class="row justify-content-center">
+    <div class="col-lg-9 text-center">
+      <!-- Warna diubah dari #b83b3b (merah) ke #1a1a1a (hitam elegan) -->
+      <!-- <h4 class="fw-semibold mb-4" style="font-size: 22px; color: #1a1a1a; line-height: 1.5;">
+        Fit and Flare Studio adalah penyedia jasa sewa gaun dan kebaya di Yogyakarta yang siap menemani momen spesialmu.
+      </h4> -->
+      <div class="tagline-box text-start mx-auto my-4" style="max-width: 700px;">
+        <p class="readable-quote m-0">
+          "Kami percaya bahwa setiap perempuan berhak tampil elegan tanpa harus mengeluarkan biaya mahal. Dengan koleksi yang selalu diperbarui dan pelayanan yang hangat, kami hadir untuk membantumu tampil percaya diri di hari istimewa."
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section class="container my-5 py-2">
+    <div class="row g-4 justify-content-center">
+      
+      <div class="col-md-5">
+        <div class="card vismis-card h-100 p-4">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-3">
+              <div class="feature-icon-box me-3"><i class="bi bi-eye-fill"></i></div>
+              <h3 class="fw-bold m-0" style="font-size: 24px;">Visi Kami</h3>
+            </div>
+            <p class="text-muted lh-lg" style="font-size: 15px;">
+              Menjadi studio persewaan busana pilihan utama di Yogyakarta yang dikenal karena kualitas koleksi eksklusif, kebersihan gaun yang higienis, serta pelayanan yang personal demi mewujudkan penampilan impian setiap pelanggan.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-5">
+        <div class="card vismis-card h-100 p-4">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-3">
+              <div class="feature-icon-box me-3"><i class="bi bi-list-stars"></i></div>
+              <h3 class="fw-bold m-0" style="font-size: 24px;">Misi Kami</h3>
+            </div>
+            <ul class="text-muted lh-lg p-0 m-0 ps-3" style="font-size: 14px;">
+              <li class="mb-2">Menyediakan koleksi gaun & kebaya yang lengkap dan berkualitas tinggi.</li>
+              <li class="mb-2">Memberikan layanan yang cepat, ramah, dan profesional di setiap sesi fitting.</li>
+              <li>Membantu pelanggan tampil percaya diri dalam setiap momen berharga mereka.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="bg-white py-5 my-5 border-top border-bottom">
+    <div class="container py-3">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold"><i class="bi bi-stars text-warning"></i> Kenapa Memilih Fit and Flare Studio?</h2>
+        <p class="text-muted small">Kelebihan utama komitmen pelayanan jasa persewaan kami</p>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        
+        <div class="col-md-4">
+          <div class="d-flex p-2">
+            <div class="feature-icon-box me-3"><i class="bi bi-chat-heart"></i></div>
+            <div>
+              <h5 class="fw-bold mb-2">Admin Responsif</h5>
+              <p class="small text-muted lh-base">Fast response & ramah! Booking jadwal fitting jadi jauh lebih mudah dan nyaman via WhatsApp.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="d-flex p-2">
+            <div class="feature-icon-box me-3"><i class="bi bi-arrow-repeat"></i></div>
+            <div>
+              <h5 class="fw-bold mb-2">Mudah & Praktis</h5>
+              <p class="small text-muted lh-base">Hanya 4 langkah mudah: lakukan booking, bayar deposit, ambil baju, dan kembalikan. Bisa fitting atau langsung sewa.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="d-flex p-2">
+            <div class="feature-icon-box me-3"><i class="bi bi-camera"></i></div>
+            <div>
+              <h5 class="fw-bold mb-2">Siap untuk Acara Spesial</h5>
+              <p class="small text-muted lh-base">Gaun selalu siap pakai dalam kondisi bersih wangi — sangat cocok untuk wisuda, prewedding, bridesmaid, dan pesta lainnya.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="container my-5 pb-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="quote-box p-5 shadow-sm">
+          <i class="bi bi-quote quote-icon"></i>
+          <h5 class="text-uppercase small text-muted fw-bold mb-4" style="letter-spacing: 2px;">Pesan dari Founder</h5>
+          <p class="readable-quote mb-4">
+            “Saya percaya bahwa setiap perempuan berhak tampil menawan dalam momen spesialnya, tanpa harus membeli gaun mahal. Itulah alasan saya mendirikan Fit and Flare Studio — tempat di mana keanggunan bisa diakses semua orang.”
+          </p>
+          <div class="border-top pt-3 d-flex justify-content-between align-items-center">
+            <div>
+              <h6 class="fw-bold m-0" style="font-size: 16px;">Widiastuti Setyaningsih</h6>
+              <span class="small text-muted">Founder Fit and Flare Studio</span>
+            </div>
+            <span class="badge bg-dark px-3 py-2 text-uppercase font-monospace" style="font-size: 10px; letter-spacing: 1px;">Management</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-white text-center py-4 border-top">
+    <p class="text-muted small mb-0">&copy; 2026 Fit & Flare Studio by Alquiler de vestidos. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fit & Flare Studio - Jasa Sewa Gaun & Kebaya Yogyakarta</title>
+  
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ==========================================================================
+       1. CUSTOM BASE STYLES & LUXURY VARIABLES (Materi CSS3 Modul 6-9)
+       ========================================================================== */
+    :root {
+      --bg-primary: #fcfbfa; /* Cream */
+      --bg-secondary: #ffffff; /* White */
+      --color-brand: #2c2520; /* Charcoal Espresso */
+      --color-accent: #c5a880; /* Warm Gold */
+      --color-accent-hover: #b3946d;
+      --text-dark: #1a1a1a;
+      --text-muted: #6c757d;
+      --transition-smooth: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-dark);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4, h5, h6, .brand-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 600;
+      color: var(--color-brand);
+    }
+    .section-title {
+      font-size: 38px;
+      font-style: italic;
+      position: relative;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 2px;
+      background-color: var(--color-accent);
+    }
+
+    /* ==========================================================================
+       2. NAVBAR PREMIUM CUSTOMIZATION
+       ========================================================================== */
+    .navbar {
+      padding: 25px 0;
+      transition: var(--transition-smooth);
+      z-index: 1050;
+    }
+    .navbar .navbar-brand {
+      color: #ffffff !important;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      transition: var(--transition-smooth);
+      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    .navbar .nav-link {
+      color: rgba(255, 255, 255, 0.9) !important;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 8px 16px !important;
+      transition: var(--transition-smooth);
+      text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    }
+    .navbar .nav-link:hover, .navbar .nav-link.active {
+      color: var(--color-accent) !important;
+      transform: translateY(-1px);
+    }
+    .navbar-toggler {
+      border: none;
+      outline: none !important;
+      box-shadow: none !important;
+    }
+    .navbar.scrolled {
+      background-color: rgba(255, 255, 255, 0.98) !important;
+      padding: 15px 0;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+      backdrop-filter: blur(10px);
+    }
+    .navbar.scrolled .navbar-brand, .navbar.scrolled .nav-link {
+      color: var(--color-brand) !important;
+      text-shadow: none;
+    }
+    .navbar.scrolled .nav-link:hover, .navbar.scrolled .nav-link.active {
+      color: var(--color-accent) !important;
+    }
+
+    /* ==========================================================================
+       3. HERO SECTION
+       ========================================================================== */
+    .hero-section {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .hero-bg-container {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      z-index: 1;
+    }
+    .hero-bg-container img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center;
+    }
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%);
+      z-index: 2;
+    }
+    .hero-container {
+      position: relative;
+      z-index: 3;
+      animation: fadeInUp 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    }
+    .hero-title {
+      font-size: 64px;
+      letter-spacing: 2px;
+      color: #ffffff;
+      text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+    .hero-description {
+      font-size: 1rem;
+      line-height: 1.8;
+      max-width: 600px;
+      margin: 0 auto;
+      color: rgba(0, 255, 225, 0.9);
+      text-shadow: 0 2px 8px rgba(8, 24, 67, 0.3);
+    }
+    .btn-custom-solid {
+      background-color: var(--color-brand);
+      color: #ffffff !important;
+      border: 1px solid var(--color-brand);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 14px 34px;
+      border-radius: 4px;
+      transition: var(--transition-smooth);
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      display: inline-block;
+    }
+    .btn-custom-solid:hover {
+      background-color: transparent;
+      border-color: #ffffff;
+      transform: translateY(-2px);
+    }
+    .btn-custom-outline {
+      background-color: transparent;
+      color: #ffffff !important;
+      border: 1px solid #ffffff;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 14px 34px;
+      border-radius: 4px;
+      transition: var(--transition-smooth);
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-custom-outline:hover {
+      background-color: #ffffff;
+      color: var(--color-brand) !important;
+      transform: translateY(-2px);
+    }
+
+    /* ==========================================================================
+       4. TESTIMONIAL VIDEO (Menggunakan CSS Hover, tanpa Swiper)
+       ========================================================================== */
+    .video-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: var(--transition-smooth);
+    }
+    .video-frame {
+      max-width: 290px;
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      overflow: hidden;
+      border-radius: 24px;
+      background-color: #000;
+      border: 4px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      position: relative;
+      transition: var(--transition-smooth);
+      cursor: pointer;
+    }
+    .video-frame video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .video-frame:hover {
+      transform: scale(1.03);
+      border-color: var(--color-accent);
+      box-shadow: 0 25px 50px rgba(44, 37, 32, 0.25);
+    }
+    .audio-indicator {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: rgba(44, 37, 32, 0.8);
+      backdrop-filter: blur(5px);
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 30px;
+      font-size: 11px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      z-index: 10;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* ==========================================================================
+       5. SIGNATURE COLLECTION GRID (Sesuai Materi Modul 10 Bootstrap)
+       ========================================================================== */
+    .product-grid-card {
+      background: var(--bg-secondary);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(44, 37, 32, 0.03);
+      transition: var(--transition-smooth);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .product-grid-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(44, 37, 32, 0.08);
+    }
+    .product-grid-img-wrapper {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 3 / 4;
+      background-color: #f5f2ef;
+    }
+    .product-grid-img-wrapper img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    .product-grid-card:hover .product-grid-img-wrapper img {
+      transform: scale(1.05);
+    }
+    .product-category-badge, .product-size-badge {
+      position: absolute;
+      z-index: 5;
+    }
+    .product-category-badge {
+      top: 15px; left: 15px;
+      background: rgba(44, 37, 32, 0.85);
+      color: #fff;
+      font-size: 11px; text-transform: uppercase;
+      padding: 6px 12px; border-radius: 30px;
+    }
+    .product-size-badge {
+      bottom: 15px; left: 15px;
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--color-brand); font-size: 11px; font-weight: 600;
+      padding: 4px 10px; border-radius: 4px;
+    }
+    .product-grid-info { padding: 24px; flex-grow: 1; display: flex; flex-direction: column; }
+    .product-grid-name { font-size: 16px; font-weight: bold; color: var(--color-brand); text-decoration: none; margin-bottom: 6px; display: block; }
+    .product-grid-name:hover { color: var(--color-accent); }
+    .product-rating { color: #ffc107; font-size: 12px; margin-bottom: 15px; }
+    .product-grid-price { font-size: 15px; font-weight: 700; border-top: 1px solid #f4f0ec; padding-top: 12px; margin-top: auto; display: flex; justify-content: space-between; align-items: center; }
+    .btn-rent-now { background-color: var(--color-brand); color: #ffffff; font-size: 11px; text-transform: uppercase; padding: 8px 16px; border-radius: 4px; text-decoration: none; transition: 0.3s; }
+    .btn-rent-now:hover { background-color: var(--color-accent); color: #fff;}
+
+    /* ==========================================================================
+       6. PREMIUM CATEGORIES (Diubah ke Bootstrap Carousel & Grid)
+       ========================================================================== */
+    .category-card img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      border-radius: 16px;
+      transition: var(--transition-smooth);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+    .category-card:hover img {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(44, 37, 32, 0.15);
+    }
+    .category-card .slider-mini-caption { text-align: center; margin-top: 15px; }
+    
+    .carousel-control-prev, .carousel-control-next {
+      width: 5%;
+      color: var(--color-brand);
+      opacity: 0.5;
+    }
+    .carousel-control-prev:hover, .carousel-control-next:hover { opacity: 1; color: var(--color-accent); }
+
+    /* ==========================================================================
+       7. KEY BENEFITS, TIMELINE, FORM (CSS Murni Sesuai Modul)
+       ========================================================================== */
+    .fitur-card-animated { background: var(--bg-secondary); border-radius: 16px; box-shadow: 0 10px 30px rgba(44, 37, 32, 0.03); transition: 0.4s; }
+    .fitur-card-animated:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(44, 37, 32, 0.08); }
+    
+    .step-timeline { position: relative; max-width: 800px; margin: 0 auto; }
+    .step-timeline-item { display: flex; margin-bottom: 40px; position: relative; }
+    .step-timeline-item::before { content: ''; position: absolute; top: 40px; left: 20px; width: 2px; height: calc(100% + 20px); background-color: #e5dec9; z-index: 1; }
+    .step-timeline-item:last-child::before { display: none; }
+    .step-badge { width: 42px; height: 42px; background-color: var(--color-brand); color: #fff; font-family: 'Playfair Display', serif; font-size: 18px; font-weight: bold; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 2; flex-shrink: 0; box-shadow: 0 4px 10px rgba(44, 37, 32, 0.15); }
+    .step-content { padding-left: 25px; padding-top: 8px; }
+
+    .contact-info-card { background: var(--bg-secondary); border-radius: 16px; box-shadow: 0 10px 30px rgba(44, 37, 32, 0.03); }
+    .form-control-custom { background-color: var(--bg-primary); border: 1px solid #e5dec9; padding: 14px 18px; border-radius: 8px; font-size: 14px; }
+    .form-control-custom:focus { border-color: var(--color-accent); box-shadow: none; background-color: #fff; }
+    .btn-submit-wa { background-color: var(--color-brand); color: #ffffff; padding: 14px; border-radius: 8px; width: 100%; text-transform: uppercase; font-weight: 600; border: none; transition: 0.3s;}
+    .btn-submit-wa:hover { background-color: var(--color-accent); }
+    .map-container-home { border-radius: 16px; overflow: hidden; border: 1px solid #e5dec9; height: 100%; min-height: 380px; }
+
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="navbar navbar-expand-lg fixed-top bg-transparent">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="assets/images/logo.png" alt="Logo" style="max-height: 32px; width: auto;">
+        <span>FIT & FLARE STUDIO</span>
+      </a>
+      <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav gap-2">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="katalog.html">Katalog</a></li>
+          <li class="nav-item"><a class="nav-link" href="cara-sewa.html">Cara Sewa</a></li>
+          <li class="nav-item"><a class="nav-link" href="tentang-kami.html">Tentang Kami</a></li>
+          <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION (DENGAN TEKS CYAN ORIGINAL) -->
+  <section class="hero-section">
+    <div class="hero-bg-container" id="hero-bg">
+      <img src="assets/images/unnamed.jpg" alt="Background Luxury Dress">
+    </div>
+    <div class="container hero-container text-center text-white">
+      <div class="row justify-content-center">
+        <div class="col-lg-9 col-md-10">
+          <h1 class="hero-title mb-3">Fit & Flare Studio</h1>
+         <p class="hero-description text-white-50 mb-5 px-3">
+        Sewa gaun pesta dan kebaya premium siluet klasik & elegan di Yogyakarta. 
+        Terbuat dari tulle halus berlapis satin eksklusif untuk momen istimewa Anda.
+      </p>
+          <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+            <a href="katalog.html" class="btn-custom-solid">Jelajahi Katalog</a>
+            <a href="#prosedur-sewa" class="btn-custom-outline">Cara Sewa</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CELEBRITY TESTIMONIALS -->
+  <section class="py-5" style="background-color: var(--bg-primary);">
+    <div class="container py-4">
+      <div class="row justify-content-center mb-5">
+        <div class="col-12 text-center">
+          <h2 class="section-title">Celebrity Testimonials</h2>
+          <p class="text-muted small text-uppercase" style="letter-spacing: 2px;">Keseruan Tokoh Publik Bersama Kami</p>
+        </div>
+      </div>
+      
+      <div class="row justify-content-center g-4">
+        <div class="col-md-4 col-10 video-card">
+          <div class="video-frame shadow" onclick="toggleMute(this)">
+            <div class="audio-indicator"><i class="bi bi-volume-mute-fill"></i></div>
+            <video class="testi-video" autoplay loop muted playsinline>
+              <source src="assets/video/testi-vina.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="text-center mt-3">
+            <h5></i> Vina Panduwinata</h5>
+            <p class="small text-muted m-0">Klik video untuk suara</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4 col-10 video-card">
+          <div class="video-frame shadow" onclick="toggleMute(this)">
+            <div class="audio-indicator"><i class="bi bi-volume-mute-fill"></i></div>
+            <video class="testi-video" autoplay loop muted playsinline>
+              <source src="assets/video/testi-dian.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="text-center mt-3">
+            <h5 ></i> Dian Nitami</h5>
+            <p class="small text-muted m-0">Klik video untuk suara</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4 col-10 video-card">
+          <div class="video-frame shadow" onclick="toggleMute(this)">
+            <div class="audio-indicator"><i class="bi bi-volume-mute-fill"></i></div>
+            <video class="testi-video" autoplay loop muted playsinline>
+              <source src="assets/video/testi-gempi.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="text-center mt-3">
+            <h5 ></i> Gempi</h5>
+            <p class="small text-muted m-0">Klik video untuk suara</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE SIGNATURE COLLECTION -->
+  <section class="py-5 bg-white">
+    <div class="container py-4">
+      <div class="row justify-content-center mb-5 text-center">
+        <div class="col-lg-8 col-md-10">
+          <h2 class="section-title">The Signature Collection</h2>
+          <p class="text-muted small text-uppercase" style="letter-spacing: 2px;">Koleksi Gaun Pilihan Terbaik</p>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+          <div class="product-grid-card">
+            <div class="product-grid-img-wrapper">
+              <span class="product-category-badge">Kebaya Elite</span>
+              <img src="assets/images/Ivory Whisper - LongDress L01.jpeg" alt="Ivory Whisper">
+              <span class="product-size-badge">S-M / LD 90 cm</span>
+            </div>
+            <div class="product-grid-info">
+              <a href="detail_1.html?id=1" class="product-grid-name">Ivory Whisper - Long Dress L01</a>
+              <div class="product-rating">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                <span class="text-muted small ms-1">(5.0)</span>
+              </div>
+              <div class="product-grid-price">
+                <span>Rp 95.000 <small class="text-muted" style="font-size: 11px;">/ 3 Hari</small></span>
+                <a href="#" class="btn-rent-now">Sewa</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+          <div class="product-grid-card">
+            <div class="product-grid-img-wrapper">
+              <span class="product-category-badge">Prewedding</span>
+              <img src="assets/images/White Aurora - LongDress L02.jpeg" alt="White Aurora">
+              <span class="product-size-badge">L / LD 100 cm</span>
+            </div>
+            <div class="product-grid-info">
+              <a href="detail_2.html?id=2" class="product-grid-name">White Aurora - Long Dress L02</a>
+              <div class="product-rating">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                <span class="text-muted small ms-1">(5.0)</span>
+              </div>
+              <div class="product-grid-price">
+                <span>Rp 95.000 <small class="text-muted" style="font-size: 11px;">/ 3 Hari</small></span>
+                <a href="#" class="btn-rent-now">Sewa</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+          <div class="product-grid-card">
+            <div class="product-grid-img-wrapper">
+              <span class="product-category-badge">Long Dress</span>
+              <img src="assets/images/Ivory Grace - LongDress L03.jpeg" alt="Ivory Grace">
+              <span class="product-size-badge">XS-S / LD 80 cm</span>
+            </div>
+            <div class="product-grid-info">
+              <a href="detail_3.html?id=3" class="product-grid-name">Ivory Grace - Long Dress L03</a>
+              <div class="product-rating">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                <span class="text-muted small ms-1">(4.9)</span>
+              </div>
+              <div class="product-grid-price">
+                <span>Rp 95.000 <small class="text-muted" style="font-size: 11px;">/ 3 Hari</small></span>
+                <a href="#" class="btn-rent-now">Sewa</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+          <div class="product-grid-card">
+            <div class="product-grid-img-wrapper">
+              <span class="product-category-badge">Long Dress</span>
+              <img src="assets/images/Flutter Belle - LongDress L04.jpeg" alt="Flutter Belle">
+              <span class="product-size-badge">XS / LD 76 cm</span>
+            </div>
+            <div class="product-grid-info">
+              <a href="detail_4.html?id=4" class="product-grid-name">Flutter Belle - Long Dress L04</a>
+              <div class="product-rating">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                <span class="text-muted small ms-1">(4.9)</span>
+              </div>
+              <div class="product-grid-price">
+                <span>Rp 95.000 <small class="text-muted" style="font-size: 11px;">/ 3 Hari</small></span>
+                <a href="#" class="btn-rent-now">Sewa</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row mt-5 text-center">
+        <div class="col-12">
+          <a href="katalog.html" class="btn-custom-solid">Lihat Semua Koleksi</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT CATEGORIES -->
+  <section class="py-5" style="background-color: var(--bg-primary);">
+    <div class="container py-4">
+      <div class="row justify-content-center mb-4">
+        <div class="col-lg-8 col-md-10 text-center">
+          <h2 class="section-title" style="font-family: 'Playfair Display', serif;">Product Categories</h2>
+          <p class="text-muted small text-uppercase" style="letter-spacing: 2px;">Ragam Pilihan Busana Eksklusif</p>
+        </div>
+      </div>
+      
+      <!-- PURE BOOTSTRAP CAROUSEL (Otomatis jalan dengan data-bs-ride="carousel") -->
+      <div id="categoryCarousel" class="carousel slide position-relative px-5" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="false">
+        <div class="carousel-inner pb-4">
+          
+          <div class="carousel-item active">
+            <div class="row g-4">
+              <div class="col-md-3 col-6 category-card">
+                <a href="katalog.html" class="text-decoration-none">
+                  <img src="assets/images/Ivory Whisper - LongDress L01.jpeg" alt="Ivory Whisper" class="img-fluid rounded-3 shadow-sm" style="width: 100%; height: 320px; object-fit: cover;">
+                  <div class="slider-mini-caption text-center mt-2">
+                    <h5 class="fw-bold mb-1 text-dark" style="font-size: 16px;">Ivory Whisper</h5>
+                    <p class="small text-muted m-0 d-none d-md-block">Long Dress L01</p>
+                  </div>
+                </a>
+              </div>
+              
+              <div class="col-md-3 col-6 category-card">
+                <a href="katalog.html" class="text-decoration-none">
+                  <img src="assets/images/White Aurora - LongDress L02.jpeg" alt="White Aurora" class="img-fluid rounded-3 shadow-sm" style="width: 100%; height: 320px; object-fit: cover;">
+                  <div class="slider-mini-caption text-center mt-2">
+                    <h5 class="fw-bold mb-1 text-dark" style="font-size: 16px;">White Aurora</h5>
+                    <p class="small text-muted m-0 d-none d-md-block">Long Dress L02</p>
+                  </div>
+                </a>
+              </div>
+              
+              <div class="col-md-3 col-6 category-card">
+                <a href="katalog.html" class="text-decoration-none">
+                  <img src="assets/images/Ivory Grace - LongDress L03.jpeg" alt="Ivory Grace" class="img-fluid rounded-3 shadow-sm" style="width: 100%; height: 320px; object-fit: cover;">
+                  <div class="slider-mini-caption text-center mt-2">
+                    <h5 class="fw-bold mb-1 text-dark" style="font-size: 16px;">Ivory Grace</h5>
+                    <p class="small text-muted m-0 d-none d-md-block">Long Dress L03</p>
+                  </div>
+                </a>
+              </div>
+              
+              <div class="col-md-3 col-6 category-card">
+                <a href="katalog.html" class="text-decoration-none">
+                  <img src="assets/images/Flutter Belle - LongDress L04.jpeg" alt="Flutter Belle" class="img-fluid rounded-3 shadow-sm" style="width: 100%; height: 320px; object-fit: cover;">
+                  <div class="slider-mini-caption text-center mt-2">
+                    <h5 class="fw-bold mb-1 text-dark" style="font-size: 16px;">Flutter Belle</h5>
+                    <p class="small text-muted m-0 d-none d-md-block">Long Dress L04</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="carousel-item">
+            <div class="row g-4">
+              <div class="col-md-3 col-6 category-card">
+                <a href="katalog.html" class="text-decoration-none">
+                  <img src="assets/images/Ivory Chantelle - LongDress L05.jpeg" alt="Ivory Chantelle" class="img-fluid rounded-3 shadow-sm" style="width: 100%; height: 320px; object-fit: cover;">
+                  <div class="slider-mini-caption text-center mt-2">
+                    <h5 class="fw-bold mb-1 text-dark" style="font-size: 16px;">Ivory Chantelle</h5>
+                    <p class="small text-muted m-0 d-none d-md-block">Long Dress L05</p>
+                  </div>
+                </a>
+              </div>
+              
+              <div class="col-md-3 col-6 category-card">
+                <a href="katalog.html" class="text-decoration-none">
+                  <img src="assets/images/Ivory Whisper - LongDress L01.jpeg" alt="Premium Kebaya" class="img-fluid rounded-3 shadow-sm" style="width: 100%; height: 320px; object-fit: cover; filter: grayscale(15%);">
+                  <div class="slider-mini-caption text-center mt-2">
+                    <h5 class="fw-bold mb-1 text-dark" style="font-size: 16px;">Kebaya Elite</h5>
+                    <p class="small text-muted m-0 d-none d-md-block">Kebaya premium payet</p>
+                  </div>
+                </a>
+              </div>
+              
+              <div class="col-md-3 col-6 category-card">
+                <a href="katalog.html" class="text-decoration-none">
+                  <img src="assets/images/White Aurora - LongDress L02.jpeg" alt="Prewedding Gown" class="img-fluid rounded-3 shadow-sm" style="width: 100%; height: 320px; object-fit: cover;">
+                  <div class="slider-mini-caption text-center mt-2">
+                    <h5 class="fw-bold mb-1 text-dark" style="font-size: 16px;">Prewedding</h5>
+                    <p class="small text-muted m-0 d-none d-md-block">Abadikan momen</p>
+                  </div>
+                </a>
+              </div>
+              
+              <div class="col-md-3 col-6 category-card">
+                <a href="katalog.html" class="text-decoration-none">
+                  <img src="assets/images/Ivory Grace - LongDress L03.jpeg" alt="Maternity Luxury" class="img-fluid rounded-3 shadow-sm" style="width: 100%; height: 320px; object-fit: cover;">
+                  <div class="slider-mini-caption text-center mt-2">
+                    <h5 class="fw-bold mb-1 text-dark" style="font-size: 16px;">Maternity</h5>
+                    <p class="small text-muted m-0 d-none d-md-block">Nyaman & memukau</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        
+        <button class="carousel-control-prev" type="button" data-bs-target="#categoryCarousel" data-bs-slide="prev" style="left: -20px; opacity: 0.7;">
+          <i class="bi bi-arrow-left-circle-fill text-dark" style="font-size: 2.2rem;"></i>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#categoryCarousel" data-bs-slide="next" style="right: -20px; opacity: 0.7;">
+          <i class="bi bi-arrow-right-circle-fill text-dark" style="font-size: 2.2rem;"></i>
+        </button>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- KENAPA MEMILIH KAMI -->
+  <section class="py-5 bg-white">
+    <div class="container py-4">
+      <div class="row justify-content-center mb-5 text-center">
+        <div class="col-lg-8 col-md-10">
+          <h2 class="section-title">Kenapa Memilih Kami?</h2>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-3 col-sm-6">
+          <div class="p-4 bg-light h-100 d-flex flex-column text-center fitur-card-animated">
+            <h5 class="fw-bold mb-2">Fitting Nyaman</h5>
+            <p class="text-muted small">Studio bersih, tertata rapi, dan nyaman untuk mencoba berbagai pilihan busana.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="p-4 bg-light h-100 d-flex flex-column text-center fitur-card-animated">
+            <h5 class="fw-bold mb-2">Admin Responsif</h5>
+            <p class="text-muted small">Pemesanan via WhatsApp cepat direspons oleh tim customer service kami.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="p-4 bg-light h-100 d-flex flex-column text-center fitur-card-animated">
+            <h5 class="fw-bold mb-2">Gaun Siap Pakai</h5>
+            <p class="text-muted small">Setiap pakaian sudah disetrika uap, wangi, bersih, dan siap dikenakan.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="p-4 bg-light h-100 d-flex flex-column text-center fitur-card-animated">
+            <h5 class="fw-bold mb-2">Harga Terjangkau</h5>
+            <p class="text-muted small">Tampil memukau di acara penting tidak harus mahal. Dapatkan harga terbaik.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARA SEWA PRAKTIS -->
+  <section class="py-5" id="prosedur-sewa" style="background-color: var(--bg-primary);">
+    <div class="container py-4">
+      <div class="row justify-content-center mb-5 text-center">
+        <div class="col-lg-8 col-md-10">
+          <h2 class="section-title">Cara Sewa Praktis</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="step-timeline">
+            <div class="step-timeline-item">
+              <div class="step-badge">1</div>
+              <div class="step-content">
+                <h5 class="fw-bold mb-2">Pilih Busana Idaman</h5>
+                <p class="text-muted small">Cari model gaun yang Anda sukai melalui Katalog Koleksi kami.</p>
+              </div>
+            </div>
+            <div class="step-timeline-item">
+              <div class="step-badge">2</div>
+              <div class="step-content">
+                <h5 class="fw-bold mb-2">Hubungi Admin & Fitting</h5>
+                <p class="text-muted small">Hubungi kami melalui form chat di bawah untuk menanyakan ketersediaan size.</p>
+              </div>
+            </div>
+            <div class="step-timeline-item">
+              <div class="step-badge">3</div>
+              <div class="step-content">
+                <h5 class="fw-bold mb-2">Bayar Deposit</h5>
+                <p class="text-muted small">Tinggalkan KTP atau uang deposit untuk mengunci tanggal sewa Anda.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT & MAP STUDIO -->
+  <section class="py-5 bg-white">
+    <div class="container py-4">
+      <div class="row justify-content-center mb-5 text-center">
+        <div class="col-lg-8 col-md-10">
+          <h2 class="section-title">Hubungi & Kunjungi Studio</h2>
+        </div>
+      </div>
+      <div class="row g-5 align-items-stretch">
+        <div class="col-lg-5">
+          <div class="contact-info-card p-4 h-100 border">
+            <h4 class="fw-bold mb-4">Kirim Pesan Cepat</h4>
+            <form id="formPemesanan">
+              <div class="mb-3">
+                <input type="text" id="client-name" class="form-control form-control-custom" placeholder="Nama Lengkap Anda" required>
+              </div>
+              <div class="mb-3">
+                <input type="text" id="client-dress" class="form-control form-control-custom" placeholder="Nama Gaun Pilihan" required>
+              </div>
+              <div class="mb-3">
+                <textarea id="client-message" class="form-control form-control-custom" rows="4" placeholder="Pertanyaan / Tanggal Pemakaian..." required></textarea>
+              </div>
+              <button type="submit" class="btn-submit-wa">
+                <i class="bi bi-whatsapp me-2"></i>Kirim ke WhatsApp
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="map-container-home">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d876.2662547523878!2d110.33518628899438!3d-7.756010342131148!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a591f1186c10f%3A0x58fb5c002d8cfc1b!2sFit%20%26%20Flare%20Studio!5e0!3m2!1sid!2sid!4v1784086562183!5m2!1sid!2sid" 
+              width="100%" height="100%" style="border:0;" loading="lazy">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-white text-center py-4 border-top">
+    <p class="text-muted small mb-0">2026 Fit & Flare Studio by Alquiler de vestidos. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    // 1. DOM EVENTS: SCROLL NAVBAR & PARALLAX BACKGROUND
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      const heroBg = document.getElementById('hero-bg');
+      let scrollValue = window.scrollY;
+      
+      if (scrollValue > 50) {
+        navbar.classList.add('scrolled'); 
+      } else {
+        navbar.classList.remove('scrolled'); 
+      }
+      
+      if (scrollValue < window.innerHeight) {
+        let opacityAmount = 1 - (scrollValue / window.innerHeight);
+        let scaleAmount = 1 + (scrollValue * 0.0005); 
+        let translateAmount = scrollValue * 0.15;
+        
+        heroBg.style.opacity = Math.max(opacityAmount, 0);
+        heroBg.style.transform = "translateY(" + translateAmount + "px) scale(" + scaleAmount + ")";
+      }
+    });
+
+    // 2. DOM MANIPULATION: VIDEO MUTE TOGGLE
+    function toggleMute(element) {
+      const video = element.querySelector('video');
+      const indicator = element.querySelector('.bi');
+      
+      if (video.muted) {
+        video.muted = false;
+        indicator.classList.remove('bi-volume-mute-fill');
+        indicator.classList.add('bi-volume-up-fill');
+      } else {
+        video.muted = true;
+        indicator.classList.remove('bi-volume-up-fill');
+        indicator.classList.add('bi-volume-mute-fill');
+      }
+    }
+
+    // 3. FORM VALIDATION & REDIRECT
+    const formPemesanan = document.getElementById('formPemesanan');
+    formPemesanan.addEventListener('submit', function(event) {
+      event.preventDefault(); 
+      const name = document.getElementById('client-name').value;
+      const dress = document.getElementById('client-dress').value;
+      const message = document.getElementById('client-message').value;
+      const adminNumber = "6281215119166";
+      
+      const text = "Halo Admin Fit & Flare Studio,%0ASaya: *" + name + "*%0ATertarik dengan gaun: *" + dress + "*%0A%0ACatatan/Pertanyaan:%0A" + message;
+      window.open("https://api.whatsapp.com/send?phone=" + adminNumber + "&text=" + text, "_blank");
+    });
+  </script>
+</body>
+</html>
